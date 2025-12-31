@@ -32,7 +32,7 @@ jobs:
       - name: Run Python commit script
         run: python3 draw_future.py
 
-      - name: Rebase and push
+      - name: Sync and push
         run: |
           git pull --rebase origin main
           git push origin main
