@@ -31,5 +31,7 @@ jobs:
       - name: Run Python commit script
         run: python3 draw_future.py
 
-      - name: Push changes
-        run: git push
+      - name: Pull & push changes
+        run: |
+          git pull --rebase
+          git push
