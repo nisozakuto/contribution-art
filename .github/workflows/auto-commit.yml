@@ -16,6 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: true
 
       - name: Set up Python
@@ -31,7 +32,7 @@ jobs:
       - name: Run Python commit script
         run: python3 draw_future.py
 
-      - name: Pull & push changes
+      - name: Rebase and push
         run: |
-          git pull --rebase
-          git push
+          git pull --rebase origin main
+          git push origin main
